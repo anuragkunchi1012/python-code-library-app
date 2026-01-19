@@ -1,42 +1,42 @@
 ---
 version: "3"
 services:
-  db:
-    container_name: db
-    image: akunchi/library:dbimage
-    ports:
-      - "3306:3306"
-    deploy:
-      replicas: 3
-      
-auth_service:
-  container_name: auth_service
-  image: akunchi/library:authimage
-  ports:
-    - "5001:5001"
-  deploy:
-    replicas: 3
+    db:
+        container_name: db
+        image: akunchi/library:dbimage
+        ports:
+            - "3306:3306"
+        deploy:
+          replicas: 3
     
-book_service:
-  container_name: book_service
-  image: akunchi/library:bookimage
-  ports:
-    - "5002:5002"
-  deploy:
-    replicas: 3
+    auth_service:
+        container_name: auth_service
+        image: akunchi/library:authimage
+        ports:
+            - "5001:5001"
+        deploy:
+            replicas: 3
     
-borrow_service:
-  container_name: borrow_service
-  image: akunchi/library:borrowimage
-  ports:
-    - "5003:5003"
-  deploy:
-    replicas: 3
+    book_service:
+        container_name: book_service
+        image: akunchi/library:bookimage
+        ports:
+            - "5002:5002"
+        deploy:
+            replicas: 3
     
-frontend_service:
-  container_name: frontend_service
-  image: akunchi/library:frontendimage
-  ports:
-    - "5000:5000"
-  deploy:
-  replicas: 3
+    borrow_service:
+        container_name: borrow_service
+        image: akunchi/library:borrowimage
+        ports:
+            - "5003:5003"
+        deploy:
+            replicas: 3
+            
+    frontend_service:
+        container_name: frontend_service
+        image: akunchi/library:frontendimage
+        ports:
+            - "5000:5000"
+        deploy:
+            replicas: 3
